@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/jquery.webbzone.alert.css" />
+        <script src="js/jquery.js" type="text/javascript"></script>
+        <script src="js/jquery.webbzone.alert.js" type="text/javascript"></script>
+    </head>
+    <body style="text-align:center;">
+		<p>WEBBZONE Alert - plugin has been created by <a href="https://in.linkedin.com/in/mohamed-salman-78b61154" target="_blank">Mohamed Salman</a></p>
+		<p>Click on the below buttons to try a demo of it.</p>
+		<div class="">
+			<button id="alert">Alert</button>
+			<button id="confirm">Confirm</button>
+			<button id="inform">Inform</button>
+			<button id="messageSuccess">Message Success</button>
+			<button id="messageDanger">Message Danger</button>
+			<button id="messageInfo">Message Info</button>
+			<button id="ShowLoader">Show Loader</button>
+			<button id="HideLoader">Hide Loader</button>
+		</div>
+        <script>
+            $(function () {
+			
+				$('#ShowLoader').click(function () {
+                    WEBBZONE.loader('show');
+                });
+                
+                $('#HideLoader').click(function () {
+                    WEBBZONE.loader('hide');
+                });
+
+                $('#messageSuccess').click(function () {
+                    WEBBZONE.message({
+                        msg: '<b>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<b>',
+                        isHtml: true,
+                        type: 'success',
+                        autoClose: true,
+                        closeDelay: 10000
+                    });
+                });
+                $('#messageDanger').click(function () {
+                    WEBBZONE.message({
+                        msg: '<b>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<b>',
+                        isHtml: true,
+                        type: 'danger'
+                    });
+                });
+                $('#messageInfo').click(function () {
+                    WEBBZONE.message({
+                        msg: '<b>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<b>',
+                        isHtml: true,
+                        type: 'info'
+                    });
+                });
+
+                $('#alert').click(function () {
+                    WEBBZONE.alert({
+						title: 'Alert',
+                        body: '<b>This is a jQuery alert dialog!</b>',
+                        isHtml: true,
+                        onConfirm: function () {
+                            alert('Confirm btn clicked!');
+                        }
+                    });
+                });
+
+                $('#confirm').click(function () {
+                    WEBBZONE.confirm({
+                        body: '<b>Are you sure to delete this record?</b>',
+                        isHtml: true,
+                        onConfirm: function () {
+                            alert('Confirm btn clicked!');
+                        },
+                        onCancel: function () {
+                            alert('Cancel btn clicked!');
+                        }
+                    });
+                });
+
+                $('#inform').click(function () {
+                    WEBBZONE.inform({
+                        title: 'Inform Box',
+                        body: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+                        isHtml: true,
+                        onClose: function () {
+                            alert('Popup closed!');
+                        }
+                    });
+                });
+
+            });
+        </script>
+    </body>
+</html>
