@@ -13,3 +13,7 @@ This js plugin provide features to alert, confirm and inform dialogs to user irr
 ## Support
 
 Support only through Github. Please don't mail us about issues, make a Github issue instead.
+
+## Developer
+
+This plugin has been made by [https://in.linkedin.com/in/mohamed-salman-78b61154][Mohamed Salman]
